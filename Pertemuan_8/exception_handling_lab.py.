@@ -1,0 +1,19 @@
+class login:
+    def __init__(self,user,password):
+        self.user = user
+        self.password = password
+    
+    def login_user(self,input_password):
+        if self.password == input_password:
+            print(f"Selamat datang {self.user}")
+        else:
+            raise ValueError("password anda salah")
+
+user1 = login("Ahmad", 123)
+
+try:
+  user1.login_user("apa")
+except ValueError as e:
+  print(f"Login gagal: {e}")
+finally:
+  print("Proses login selesai")
